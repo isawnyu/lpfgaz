@@ -29,7 +29,7 @@ dependencies = [
   "pytest",
   "platformdirs",
   # "python-slugify",
-  # "textnorm",
+  "textnorm",
   #"validators",
 ]
 [project.urls]
