@@ -15,6 +15,24 @@ from pathlib import Path
 logger = logging.getLogger(__name__)
 
 
+class LPFFeature:
+    """
+    Manage a Linked Places Format Feature
+    """
+
+    def __init__(self, data: dict):
+        """
+        Initialize LPF Feature
+        """
+        self.data = data
+
+    def to_pleiades_placemaker(self) -> dict:
+        """
+        Convert LPF Feature to Pleiades Placemaker JSON
+        """
+        return {}
+
+
 class LPFFeatureCollection:
     """
     Manage a Linked Places Format Feature Collection
