@@ -1,0 +1,40 @@
+#
+# This file is part of lpf2pleiades
+# by Tom Elliott for the Institute for the Study of the Ancient World
+# (c) Copyright 2024 by New York University
+# Licensed under the AGPL-3.0; see LICENSE.txt file.
+#
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lpf2pleiades"
+version = "0.0.1"
+authors = [
+  { name="Tom Elliott", email="tom.elliott@nyu.edu" },
+]
+description = "Prepare data in Linked Places Format for ingest into Pleiades"
+readme = "README.md"
+requires-python = ">=3.12.6"
+license = { text = "AGPL-3.0" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "airtight",
+  "pytest",
+  "platformdirs",
+  # "python-slugify",
+  # "textnorm",
+  #"validators",
+]
+[project.urls]
+# "Homepage" = "https://github.com/pypa/sampleproject"
+# "Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
