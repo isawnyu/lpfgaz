@@ -77,6 +77,15 @@ class LPFFeature:
         """
         return self._data["@id"]
 
+    def is_valid_ccode(self, ccode: str) -> bool:
+        """
+        Check if a country code is valid
+        """
+        info = self._get_country_geonames(ccode)
+        if info is None:
+            return False
+        return True
+
     @property
     def title(self) -> str:
         """
@@ -119,8 +128,16 @@ class LPFFeature:
         try:
             info = self._geonames_country_info[ccode]
         except KeyError:
-            info = self._fetch_country_geonames(ccode)[0]
-            self._geonames_country_info[ccode] = info
+            info_list = self._fetch_country_geonames(ccode)
+            if len(info_list) == 0:
+                return None
+            elif len(info_list) == 1:
+                info = info_list[0]
+                self._geonames_country_info[ccode] = info
+            else:
+                raise RuntimeError(
+                    f"Multiple country info records found for {ccode}: {pformat(info_list, indent=4)}"
+                )
         return info
 
 
