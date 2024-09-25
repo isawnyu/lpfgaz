@@ -31,6 +31,7 @@ dependencies = [
   # "python-slugify",
   "textnorm",
   #"validators",
+  "webiquette@git+https://github.com/isawnyu/webiquette.git"
 ]
 [project.urls]
 # "Homepage" = "https://github.com/pypa/sampleproject"

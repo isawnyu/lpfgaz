@@ -146,3 +146,6 @@ script_template_3.py
 test_template_3.py
 cover
 ~$*.docx
+
+# project-specific
+data/cache
