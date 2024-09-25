@@ -62,7 +62,7 @@ class LPFName:
 
     def _clean_lang(self):
         """
-        Clean and validate the language code
+        Clean and validate a language code
         """
         clean = clean_string(self._data["lang"])
         if not tags.check(clean):
