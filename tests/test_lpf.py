@@ -21,7 +21,7 @@ def example_feature_data():
     return {
         "@id": "http://nowhere.org/places/example",
         "type": "Feature",
-        "properties": {"title": "Example Feature", "ccodes": ["GB"]},
+        "properties": {"title": "Example Feature", "ccodes": ["GB"], "fclasses": ["P"]},
     }
 
 
@@ -35,6 +35,9 @@ class TestLPFFeature:
         assert feature.id == example_feature_data["@id"]
         assert feature.title == example_feature_data["properties"]["title"]
         assert feature.ccodes == example_feature_data["properties"]["ccodes"]
+        assert feature.country_codes == example_feature_data["properties"]["ccodes"]
+        assert feature.fclasses == example_feature_data["properties"]["fclasses"]
+        assert feature.feature_classes == example_feature_data["properties"]["fclasses"]
 
 
 class TestLPFFeatureCollection:

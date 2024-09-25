@@ -38,7 +38,21 @@ class LPFFeature:
         """
         Get the country codes of the LPF Feature
         """
-        return self.cccodes()
+        return self.ccodes
+
+    @property
+    def fclasses(self) -> list:
+        """
+        Get the feature classes of the LPF Feature
+        """
+        return self._data["properties"]["fclasses"]
+
+    @property
+    def feature_classes(self) -> list:
+        """
+        Get the feature classes of the LPF Feature
+        """
+        return self.fclasses
 
     @property
     def id(self) -> str:
