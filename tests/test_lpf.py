@@ -1,7 +1,16 @@
-import json
+#
+# This file is part of lpfgaz
+# by Tom Elliott for the Institute for the Study of the Ancient World
+# (c) Copyright 2024 by New York University
+# Licensed under the AGPL-3.0; see LICENSE.txt file.
+#
+
+"""
+Test the lpfgaz.lpf module
+"""
 import pytest
 from pathlib import Path
-from lpf2pleiades.lpf import LPFFeature, LPFFeatureCollection
+from lpfgaz.lpf import LPFFeature, LPFFeatureCollection
 
 test_data_path = Path("tests/data")
 example_lpf_file = test_data_path / "example_lpf.jsonld"
@@ -10,9 +19,9 @@ example_lpf_file = test_data_path / "example_lpf.jsonld"
 @pytest.fixture
 def example_feature_data():
     return {
+        "@id": "http://nowhere.org/places/example",
         "type": "Feature",
-        "properties": {"name": "Example Feature"},
-        "geometry": {"type": "Point", "coordinates": [0.0, 0.0]},
+        "properties": {"title": "Example Feature"},
     }
 
 
@@ -20,15 +29,9 @@ def test_initialization(example_feature_data):
     # Test the initialization of LPFFeature
     feature = LPFFeature(example_feature_data)
     assert isinstance(feature, LPFFeature)
-    assert feature.data == example_feature_data
-
-
-def test_to_pleiades_placemaker(example_feature_data):
-    # Test the to_pleiades_placemaker method
-    feature = LPFFeature(example_feature_data)
-    placemaker_data = feature.to_pleiades_placemaker()
-    assert isinstance(placemaker_data, dict)
-    # Add more assertions based on the expected output of to_pleiades_placemaker
+    assert feature._data == example_feature_data
+    assert feature.id == "http://nowhere.org/places/example"
+    assert feature.title == "Example Feature"
 
 
 class TestLPFFeatureCollection:
