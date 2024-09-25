@@ -27,6 +27,20 @@ class LPFFeature:
         self._data = data  # original Linked Places Format data
 
     @property
+    def ccodes(self) -> list:
+        """
+        Get the country codes of the LPF Feature
+        """
+        return self._data["properties"]["ccodes"]
+
+    @property
+    def country_codes(self) -> list:
+        """
+        Get the country codes of the LPF Feature
+        """
+        return self.cccodes()
+
+    @property
     def id(self) -> str:
         """
         Get the ID of the LPF Feature

@@ -21,17 +21,20 @@ def example_feature_data():
     return {
         "@id": "http://nowhere.org/places/example",
         "type": "Feature",
-        "properties": {"title": "Example Feature"},
+        "properties": {"title": "Example Feature", "ccodes": ["GB"]},
     }
 
 
-def test_initialization(example_feature_data):
-    # Test the initialization of LPFFeature
-    feature = LPFFeature(example_feature_data)
-    assert isinstance(feature, LPFFeature)
-    assert feature._data == example_feature_data
-    assert feature.id == "http://nowhere.org/places/example"
-    assert feature.title == "Example Feature"
+class TestLPFFeature:
+
+    def test_initialization(self, example_feature_data):
+        # Test the initialization of LPFFeature
+        feature = LPFFeature(example_feature_data)
+        assert isinstance(feature, LPFFeature)
+        assert feature._data == example_feature_data
+        assert feature.id == "http://nowhere.org/places/example"
+        assert feature.title == "Example Feature"
+        assert feature.ccodes == ["GB"]
 
 
 class TestLPFFeatureCollection:
