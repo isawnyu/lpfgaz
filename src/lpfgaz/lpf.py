@@ -19,6 +19,15 @@ from webiquette.webi import Webi
 
 logger = logging.getLogger(__name__)
 DEFAULT_HEADERS = {"User-Agent": "lpfgaz/0.1.0 (+https://github.com/isawnyu/lpfgaz)"}
+FEATURE_CLASSES = {  # LFP Feature Classes
+    "A": "Administrative entities (e.g. countries, provinces, municipalities)",
+    "H": "Water bodies (e.g. rivers, lakes, bays, seas)",
+    "L": "Regions, landscape areas (cultural, geographic, historical)",
+    "P": "Populated places (e.g. cities, towns, hamlets)",
+    "R": "Roads, routes, rail",
+    "S": "Sites (e.g. archaeological sites, buildings, complexes)",
+    "T": "Terrestrial landforms (e.g. mountains, valleys, capes)",
+}
 
 
 class LPFFeature:
@@ -71,6 +80,13 @@ class LPFFeature:
         return self.fclasses
 
     @property
+    def fclasses_info(self) -> dict:
+        """
+        Get the feature class info of the LPF Feature
+        """
+        return {fclass: FEATURE_CLASSES[fclass] for fclass in self.fclasses}
+
+    @property
     def id(self) -> str:
         """
         Get the ID of the LPF Feature
@@ -85,6 +101,17 @@ class LPFFeature:
         if info is None:
             return False
         return True
+    
+    def is_valid_fclass(self, fclass: str) -> bool:
+        """
+        Check if a feature class is valid
+        """
+        try:
+            FEATURE_CLASSES[fclass]
+        except KeyError:
+            return False
+        else:
+            return True
 
     @property
     def title(self) -> str:

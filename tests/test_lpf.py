@@ -47,11 +47,26 @@ class TestLPFFeature:
         ccode = example_feature_data["properties"]["ccodes"][0]
         assert feature.countries_geonames[ccode]["countryName"] == "United Kingdom"
 
+    def test_fclasses_info(self, example_feature_data):
+        # Test the fclasses_info property
+        feature = LPFFeature(example_feature_data)
+        fclass = example_feature_data["properties"]["fclasses"][0]
+        assert (
+            feature.fclasses_info[fclass]
+            == "Populated places (e.g. cities, towns, hamlets)"
+        )
+
     def test_is_valid_ccode(self):
         # Test the is_valid_ccode method
         feature = LPFFeature({})
         assert feature.is_valid_ccode("GB")
         assert not feature.is_valid_ccode("8675309")
+
+    def test_is_valid_fclass(self):
+        # Test the is_valid_fclass method
+        feature = LPFFeature({})
+        assert feature.is_valid_fclass("P")
+        assert not feature.is_valid_fclass("8675309")
 
 
 class TestLPFFeatureCollection:
