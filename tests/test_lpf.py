@@ -39,6 +39,13 @@ class TestLPFFeature:
         assert feature.fclasses == example_feature_data["properties"]["fclasses"]
         assert feature.feature_classes == example_feature_data["properties"]["fclasses"]
 
+    def test_countries_geonames(self, example_feature_data):
+        # Test the countries_geonames property
+        feature = LPFFeature(example_feature_data)
+        assert feature.countries_geonames == [
+            {"geonames_id": 2635167, "name": "United Kingdom"}
+        ]
+
 
 class TestLPFFeatureCollection:
 
