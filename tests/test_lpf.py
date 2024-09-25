@@ -44,7 +44,8 @@ class TestLPFFeature:
     def test_countries_geonames(self, example_feature_data):
         # Test the countries_geonames property
         feature = LPFFeature(example_feature_data)
-        assert feature.countries_geonames[0]["countryName"] == "United Kingdom"
+        ccode = example_feature_data["properties"]["ccodes"][0]
+        assert feature.countries_geonames[ccode]["countryName"] == "United Kingdom"
 
 
 class TestLPFFeatureCollection:

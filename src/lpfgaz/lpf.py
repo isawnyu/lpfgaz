@@ -54,7 +54,7 @@ class LPFFeature:
         """
         Get the Geonames country info of the LPF Feature
         """
-        return [self._get_country_geonames(ccode) for ccode in self.ccodes]
+        return {ccode: self._get_country_geonames(ccode) for ccode in self.ccodes}
 
     @property
     def fclasses(self) -> list:
