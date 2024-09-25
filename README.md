@@ -11,7 +11,9 @@ A python package for working with data in the [Linked Places Format (LPF)](https
 - [ ] Support all LPF complex objects with corresponding python classes, each with intuitive properties for accessing data.
     - [ ] LPFFeatureCollection (in progress)
         - [ ] Read an LPF JSON file
+            - [ ] Validate LPF JSON on read
         - [ ] Write an LPF JSON file
+            - [ ] Ensure valid on or before write (separate validation step?)
         - [ ] Read an [LP-TSV file](https://github.com/LinkedPasts/linked-places-format/blob/main/tsv_0.5.md)
     - [ ] LPFFeature (in progress)
         - [x] get properties:title
