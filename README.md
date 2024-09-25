@@ -2,6 +2,10 @@
 
 A python package for working with data in the Linked Places Format (LPF)
 
+# install and config
+
+- For functions involving the Geonames API, the environment variable `GEONAMES_USER` must be set to a string that is a valid GeoNames username. In the absence of this environment variable, the "demo" username is used, which almost always results in a "denied" response from the API.
+
 ## Roadmap
 
 - [ ] Support all LPF complex objects with corresponding python classes, each with intuitive properties for accessing data.
