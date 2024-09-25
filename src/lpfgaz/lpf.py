@@ -1,5 +1,5 @@
 #
-# This file is part of lpf2pleiades
+# This file is part of lpfgaz
 # by Tom Elliott for the Institute for the Study of the Ancient World
 # (c) Copyright 2024 by New York University
 # Licensed under the AGPL-3.0; see LICENSE.txt file.
@@ -24,13 +24,21 @@ class LPFFeature:
         """
         Initialize LPF Feature
         """
-        self.data = data
+        self._data = data  # original Linked Places Format data
 
-    def to_pleiades_placemaker(self) -> dict:
+    @property
+    def id(self) -> str:
         """
-        Convert LPF Feature to Pleiades Placemaker JSON
+        Get the ID of the LPF Feature
         """
-        return {}
+        return self._data["@id"]
+
+    @property
+    def title(self) -> str:
+        """
+        Get the title of the LPF Feature
+        """
+        return self._data["properties"]["title"]
 
 
 class LPFFeatureCollection:
