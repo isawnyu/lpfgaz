@@ -14,8 +14,8 @@ A python package for working with data in the Linked Places Format (LPF)
         - [x] get properties:title
         - [x] get properties:@id
         - [x] get properties:ccodes
-            - [ ] lookup countries from ccodes
-            - [ ] validate ccodes
+            - [x] lookup countries from ccodes (implemented with issue #1)
+            - [x] validate ccodes (implemented with issue #1)
         - [x] get properties:fclasses
             - [ ] lookup feature class names from ccodes
             - [ ] validate fclasses
