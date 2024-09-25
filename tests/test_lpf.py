@@ -32,9 +32,9 @@ class TestLPFFeature:
         feature = LPFFeature(example_feature_data)
         assert isinstance(feature, LPFFeature)
         assert feature._data == example_feature_data
-        assert feature.id == "http://nowhere.org/places/example"
-        assert feature.title == "Example Feature"
-        assert feature.ccodes == ["GB"]
+        assert feature.id == example_feature_data["@id"]
+        assert feature.title == example_feature_data["properties"]["title"]
+        assert feature.ccodes == example_feature_data["properties"]["ccodes"]
 
 
 class TestLPFFeatureCollection:
