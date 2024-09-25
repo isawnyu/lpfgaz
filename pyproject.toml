@@ -1,5 +1,5 @@
 #
-# This file is part of lpf2pleiades
+# This file is part of lpfgaz
 # by Tom Elliott for the Institute for the Study of the Ancient World
 # (c) Copyright 2024 by New York University
 # Licensed under the AGPL-3.0; see LICENSE.txt file.
@@ -10,12 +10,12 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "lpf2pleiades"
+name = "lpfgaz"
 version = "0.0.1"
 authors = [
   { name="Tom Elliott", email="tom.elliott@nyu.edu" },
 ]
-description = "Prepare data in Linked Places Format for ingest into Pleiades"
+description = "Manage gazetteer data in the Linked Places format."
 readme = "README.md"
 requires-python = ">=3.12.6"
 license = { text = "AGPL-3.0" }
@@ -27,7 +27,7 @@ classifiers = [
 dependencies = [
   "airtight",
   "pytest",
-  "platformdirs",
+  # "platformdirs",
   # "python-slugify",
   "textnorm",
   #"validators",
