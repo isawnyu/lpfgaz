@@ -6,7 +6,7 @@
 #
 
 """
-Read LPF files
+Define Main Classes for Linked Places Format Gazetteer
 """
 import json
 import logging
@@ -101,7 +101,7 @@ class LPFFeature:
         if info is None:
             return False
         return True
-    
+
     def is_valid_fclass(self, fclass: str) -> bool:
         """
         Check if a feature class is valid
