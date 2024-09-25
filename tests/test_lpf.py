@@ -62,6 +62,12 @@ class TestLPFFeature:
         assert feature.is_valid_ccode("GB")
         assert not feature.is_valid_ccode("8675309")
 
+    def test_is_valid_fclass(self):
+        # Test the is_valid_fclass method
+        feature = LPFFeature({})
+        assert feature.is_valid_fclass("P")
+        assert not feature.is_valid_fclass("8675309")
+
 
 class TestLPFFeatureCollection:
 

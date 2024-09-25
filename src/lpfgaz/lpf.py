@@ -101,6 +101,17 @@ class LPFFeature:
         if info is None:
             return False
         return True
+    
+    def is_valid_fclass(self, fclass: str) -> bool:
+        """
+        Check if a feature class is valid
+        """
+        try:
+            FEATURE_CLASSES[fclass]
+        except KeyError:
+            return False
+        else:
+            return True
 
     @property
     def title(self) -> str:
