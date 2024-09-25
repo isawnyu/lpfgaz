@@ -10,6 +10,8 @@ A python package for working with data in the Linked Places Format (LPF)
 
 - [ ] Support all LPF complex objects with corresponding python classes, each with intuitive properties for accessing data.
     - [ ] LPFFeatureCollection (in progress)
+        - [ ] Read an LPF JSON file
+        - [ ] Write an LPF JSON file
     - [ ] LPFFeature (in progress)
         - [x] get properties:title
         - [x] get properties:@id
@@ -20,22 +22,15 @@ A python package for working with data in the Linked Places Format (LPF)
             - [ ] lookup feature class names from fclasses
             - [ ] validate fclasses
         - [ ] are there other properties in the spec not represented in the example JSON?
-
-    - [ ] LPFWhen
-        - [ ] LPFTimeSpan
-        - [ ] LPFTimePeriod
-    - [ ] LPFName
-    - [ ] LPFType
-    - [ ] LPFGeometry
-    - [ ] LPFLink
-    - [ ] LPFRelation
-    - [ ] LPFDescription
-    - [ ] LPFDepiction
-
-- [ ] Read an LPF JSON file
-
-- [ ] Write an LPF JSON file
-
-- [ ] TBD
+        - [ ] LPFWhen
+            - [ ] LPFTimeSpan
+            - [ ] LPFTimePeriod
+        - [ ] LPFName
+        - [ ] LPFType
+        - [ ] LPFGeometry
+        - [ ] LPFLink
+        - [ ] LPFRelation
+        - [ ] LPFDescription
+        - [ ] LPFDepiction
 
 
