@@ -12,6 +12,7 @@ import json
 import logging
 from os import environ
 from pathlib import Path
+from pprint import pformat
 from requests import RequestException
 from requests.models import PreparedRequest
 from webiquette.webi import Webi
@@ -91,7 +92,12 @@ class LPFFeature:
         try:
             w = self._web_interfaces["geonames"]
         except KeyError:
-            w = Webi(netloc="api.geonames.org", headers=self._web_headers)
+            w = Webi(
+                netloc="api.geonames.org",
+                headers=self._web_headers,
+                respect_robots_txt=False,
+            )
+            # geonames disallows everyone everthing in robots.txt, so we have to ignore it
             self._web_interfaces["geonames"] = w
         params = {"country": ccode, "username": environ.get("GEONAMES_USER", "demo")}
         req = PreparedRequest()
@@ -102,7 +108,7 @@ class LPFFeature:
         except RequestException as e:
             logger.error(f"Error fetching Geonames country info for {ccode}: {e}")
             return None
-        return response.json()
+        return response.json()["geonames"]
 
     def _get_country_geonames(self, ccode: str) -> dict:
         """
@@ -113,7 +119,7 @@ class LPFFeature:
         try:
             info = self._geonames_country_info[ccode]
         except KeyError:
-            info = self._fetch_country_geonames(ccode)
+            info = self._fetch_country_geonames(ccode)[0]
             self._geonames_country_info[ccode] = info
         return info
 

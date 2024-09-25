@@ -8,9 +8,11 @@
 """
 Test the lpfgaz.lpf module
 """
+from lpfgaz.lpf import LPFFeature, LPFFeatureCollection
+import logging
+from pprint import pformat
 import pytest
 from pathlib import Path
-from lpfgaz.lpf import LPFFeature, LPFFeatureCollection
 
 test_data_path = Path("tests/data")
 example_lpf_file = test_data_path / "example_lpf.jsonld"
@@ -42,9 +44,7 @@ class TestLPFFeature:
     def test_countries_geonames(self, example_feature_data):
         # Test the countries_geonames property
         feature = LPFFeature(example_feature_data)
-        assert feature.countries_geonames == [
-            {"geonames_id": 2635167, "name": "United Kingdom"}
-        ]
+        assert feature.countries_geonames[0]["countryName"] == "United Kingdom"
 
 
 class TestLPFFeatureCollection:
