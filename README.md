@@ -22,7 +22,7 @@ A python package for working with data in the [Linked Places Format (LPF)](https
         - [x] get properties:fclasses
             - [x] lookup feature class names from fclasses (implemented with issue #2)
             - [x] validate fclasses (implemented with issue #2)
-        - [ ] are there other properties in the spec not represented in the example JSON?
+        - [x] are there other properties in the spec not represented in the example JSON? No.
         - [ ] LPFWhen
             - [ ] LPFTimeSpan
             - [ ] LPFTimePeriod
