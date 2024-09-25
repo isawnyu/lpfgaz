@@ -1,6 +1,6 @@
 # lpfgaz
 
-A python package for working with data in the Linked Places Format (LPF)
+A python package for working with data in the [Linked Places Format (LPF)](https://github.com/LinkedPasts/linked-places-format)
 
 # install and config
 
@@ -20,8 +20,8 @@ A python package for working with data in the Linked Places Format (LPF)
             - [x] lookup countries from ccodes (implemented with issue #1)
             - [x] validate ccodes (implemented with issue #1)
         - [x] get properties:fclasses
-            - [ ] lookup feature class names from fclasses (in work in issue #2)
-            - [ ] validate fclasses (in work in issue #2)
+            - [x] lookup feature class names from fclasses (implemented with issue #2)
+            - [x] validate fclasses (implemented with issue #2)
         - [ ] are there other properties in the spec not represented in the example JSON?
         - [ ] LPFWhen
             - [ ] LPFTimeSpan
