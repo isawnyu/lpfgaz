@@ -28,7 +28,7 @@ A python package for working with data in the [Linked Places Format (LPF)](https
         - [ ] LPFWhen
             - [ ] LPFTimeSpan
             - [ ] LPFTimePeriod
-        - [ ] LPFName
+        - [ ] LPFName (issue #5: now in work in branch `issue5_lpfname`)
         - [ ] LPFType
         - [ ] LPFGeometry
         - [ ] LPFLink
